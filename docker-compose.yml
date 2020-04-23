@@ -31,32 +31,6 @@ services:
       - postgres
     restart: unless-stopped
 
-  # node:
-  #   container_name: node_ui
-  #   image: "node:13"
-  #   user: "node"
-  #   working_dir: /home/node/app
-  #   environment:
-  #     - NODE_ENV=development
-  #   volumes:
-  #     - ./ui:/home/node/app
-  #   expose:
-  #     - "3000"
-  #   command: "npm start"  
-
-  node:
-    container_name: node_api
-    image: "node:13"
-    user: "node"
-    working_dir: /home/node/app
-    environment:
-      - NODE_ENV=development
-    volumes:
-      - ./api/:/home/node/app
-    expose:
-      - "8080"
-    command: "npm start"  
-
 networks:
   postgres:
     driver: bridge
